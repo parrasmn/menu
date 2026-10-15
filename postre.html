@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POSTRE</title>
+    <link rel="stylesheet" href="appearenceP.css">
+</head>
+
+<body>
+    <main class="scene">
+        <img src="Menu_fondo.png" class="background" alt="Fondo">
+
+        <!-- Pantalla de contraseña -->
+        <section class="contenido-postre" id="pantalla">
+            <h1 class="contraseña">Ahora si falta uno..</h1>
+
+            <form class="formulario-contraseña" id="formulario">
+                <label for="password">
+                    Escribe la contraseña para descubrir tu postre
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Escribe la contraseña..."
+                    required
+                >
+
+                <button type="submit">DESCUBRIR</button>
+
+                <p id="error" hidden>
+                    Esa no es la contraseña. Inténtalo de nuevo.
+                </p>
+            </form>
+
+            <h2 class="postre">Te puedes quedar sin dulce.</h2>
+        </section>
+
+        <!-- Pantalla de la carta -->
+        <section class="contenido-postre" id="sorpresa" hidden>
+            <img src="carta.png" alt="Una carta para ti" class="carta">
+            <button type="button" id="boton-final">CONTINUAR</button>
+        </section>
+
+        <!-- Pantalla final -->
+        <section class="pantalla-final" id="pantalla-final" hidden>
+            <h1>Gracias por todo</h1>
+            <p>PD: Aún nos falta mucho por programar.</p>
+        </section>
+    </main>
+
+    <script>
+        const formulario = document.getElementById("formulario");
+        const campo = document.getElementById("password");
+        const error = document.getElementById("error");
+        const pantalla = document.getElementById("pantalla");
+        const sorpresa = document.getElementById("sorpresa");
+        const pantallaFinal = document.getElementById("pantalla-final");
+        const botonFinal = document.getElementById("boton-final");
+
+        formulario.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (campo.value === "MusicaSol1017") {
+                pantalla.hidden = true;
+                sorpresa.hidden = false;
+            } else {
+                error.hidden = false;
+                campo.value = "";
+                campo.focus();
+            }
+        });
+
+        botonFinal.addEventListener("click", function() {
+            sorpresa.hidden = true;
+            pantallaFinal.hidden = false;
+        });
+    </script>
+</body>
+</html>

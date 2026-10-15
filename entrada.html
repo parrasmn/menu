@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas</title>
+    <link rel="stylesheet" href="appearenceE.css">
+</head>
+
+<body>
+    <main class="contenedor">
+        <h1>¿CUÁNTO SABES?</h1>
+        <p class="intro">Cinco preguntas. Piensa bien tus respuestas.</p>
+
+        <form id="quiz">
+
+            <section class="pregunta">
+                <h2>01. ¿Quién ama más a quién?</h2>
+
+                <label><input type="radio" name="p1" value="a"> Tú me amas más a mí</label>
+                <label><input type="radio" name="p1" value="b"> Yo te amo más a ti</label>
+                <label><input type="radio" name="p1" value="c"> Los dos nos amamos lo mismo</label>
+                <label><input type="radio" name="p1" value="d"> Ninguna de las anteriores</label>
+            </section>
+
+            <section class="pregunta">
+                <h2>02. ¿Cómo se llama mi tía... no tía?</h2>
+
+                <label><input type="radio" name="p2" value="a"> Chave</label>
+                <label><input type="radio" name="p2" value="b"> Nana</label>
+                <label><input type="radio" name="p2" value="c"> Soly</label>
+                <label><input type="radio" name="p2" value="d"> Mónica</label>
+            </section>
+
+            <section class="pregunta">
+                <h2>03. ¿Cuál es mi número de teléfono?</h2>
+
+                <label><input type="radio" name="p3" value="a"> 311 332 4457</label>
+                <label><input type="radio" name="p3" value="b"> 312 322 4418</label>
+                <label><input type="radio" name="p3" value="c"> 311 322 4418</label>
+                <label><input type="radio" name="p3" value="d"> 311 322 4417</label>
+            </section>
+
+            <section class="pregunta">
+                <h2>04. Si te doy 10 besos y me devuelves 4, ¿cuánto me debes?</h2>
+
+                <label><input type="radio" name="p4" value="a"> 6 besos</label>
+                <label><input type="radio" name="p4" value="b"> 2 besos</label>
+                <label><input type="radio" name="p4" value="c"> 5 besos</label>
+                <label><input type="radio" name="p4" value="d"> 18.556.456.578 besos</label>
+            </section>
+
+            <section class="pregunta">
+                <h2>05. Si llevamos un año juntos, ¿cuántos meses llevo soportándote?</h2>
+
+                <label><input type="radio" name="p5" value="a"> Ninguno</label>
+                <label><input type="radio" name="p5" value="b"> 6</label>
+                <label><input type="radio" name="p5" value="c"> 3</label>
+                <label><input type="radio" name="p5" value="d"> 12</label>
+            </section>
+
+            <button type="submit">ENVIAR RESPUESTAS</button>
+            <button type="button" class="back" onclick="window.location.href='../index.html'">
+                BACK
+            </button>
+        </form>
+
+        <div id="resultado" hidden>
+            <h2 id="puntuacion"></h2>
+            <p id="mensaje"></p>
+        </div>
+
+    </main>
+
+    <script src="scriptE.js"></script>
+</body>
+</html>

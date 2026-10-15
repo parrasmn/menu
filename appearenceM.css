@@ -1,0 +1,421 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+/*
+   Centramos la escena dentro del espacio disponible
+   en el navegador, tanto en computador como en celular.
+*/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Courier New", monospace;
+}
+
+
+.scene {
+    position: relative;
+
+    width: min(100vw, 177.7778vh);
+    height: min(100vh, 56.25vw);
+
+    flex-shrink: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+#analisis {
+    position: absolute;
+    top: 9%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
+    text-align: center;
+
+    color: white;
+    font-family: "Courier New", monospace;
+    font-size: clamp(18px, 3vw, 48px);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+}
+
+/* Botón Iniciar */
+.start-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding: 16px 48px;
+    min-width: 220px;
+
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 2px;
+
+    font-family: "Courier New", monospace;
+    font-size: clamp(13px, 1.2vw, 18px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Efecto visual al pasar el cursor */
+@media (hover: hover) {
+    .start-button:hover {
+        background: white;
+        color: black;
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.12);
+    }
+}
+
+/* Mensaje inferior */
+#horizontal {
+    position: absolute;
+    bottom: 9%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.55);
+    font-family: "Courier New", monospace;
+    font-size: clamp(8px, 1vw, 15px);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.inicio {
+    position: absolute;
+    left: 50%;
+    width: 90%;
+    margin: 0;
+    padding: 0;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: "Courier New", monospace;
+    font-size: clamp(20px, 4vw, 42px);
+    line-height: 1.2;
+}
+
+h1.inicio {
+    top: 10%;
+    color: rgb(7, 40, 230);
+}
+
+h2.inicio {
+    top: 27%;
+    color: rgb(224, 53, 68);
+    overflow-wrap: anywhere;
+}
+
+h3 {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    width: 90%;
+    margin: 0;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: "Courier New", monospace;
+    font-size: clamp(16px, 2.5vw, 26px);
+    color: rgb(224, 30, 60);
+}
+
+h4 {
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    width: 90%;
+    margin: 0;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: "Courier New", monospace;
+    font-size: clamp(22px, 3vw, 34px);
+    color: white;
+}
+
+.sol {
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    width: clamp(65px, 10vw, 120px);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.sol img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform-origin: center;
+}
+
+.play-button {
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    width: 48px;
+    height: 38px;
+    transform: translate(-50%, -50%);
+    background: #ff0000;
+    border: none;
+    border-radius: 10px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.play-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid white;
+}
+
+
+@media (max-width: 600px) {
+    .inicio {
+        width: 94%;
+        font-size: clamp(18px, 5vw, 28px);
+    }
+    h2.inicio {
+        top: 28%;
+    }
+    h3 {
+        top: 46%;
+    }
+    h4 {
+        top: 56%;
+    }
+    .sol {
+        top: 69%;
+        width: 75px;
+    }
+    .play-button {
+        top: 63%;
+    }
+}
+
+/* =========================================
+   5. BOTÓN DE YOUTUBE
+========================================= */
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: clamp(48px, 6vw, 100px);
+    height: clamp(34px, 4vw, 65px);
+
+    background: #ff0000;
+    border: none;
+    border-radius: 20%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Triángulo blanco */
+.play-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+
+    width: 0;
+    height: 0;
+
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 20px solid white;
+}
+
+
+/* =========================================
+   6. SOL GIRATORIO
+========================================= */
+
+.sol {
+    position: absolute;
+
+    /* Centro horizontal de la escena */
+    left: 50%;
+    top: 56%;
+    transform: translateX(-50%);
+
+    /* Tamaño relativo a la escena */
+    width: 11%;
+    z-index: 5;
+}
+
+.sol img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    /* El giro conserva el centro de la imagen */
+    transform-origin: center center;
+}
+
+
+/* =========================================
+   7. PANTALLAS MUY PEQUEÑAS
+========================================= */
+
+/*
+   Reduce el tamaño mínimo del botón inicial
+   en teléfonos estrechos sin cambiar la composición.
+*/
+@media (max-width: 500px) {
+    .start-button {
+        min-width: 0;
+        padding: 10px 25px;
+        letter-spacing: 2px;
+    }
+}
+
+/* Estilos del menú */
+.background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.title {
+    position: absolute;
+    z-index: 1;
+    top: 28%;
+    left: 44%;
+    transform: translateX(-50%);
+    color: #000e4b;
+    font-family: Georgia, serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: bold;
+}
+
+.blanket {
+    position: absolute;
+    z-index: 1;
+    left: 46%;
+    bottom: -6%;
+    width: min(58%, 900px);
+    height: auto;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.dish {
+    position: absolute;
+    z-index: 2;
+    bottom: 6%;
+    display: flex;
+    width: 10.5%;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: Georgia, serif;
+    font-size: clamp(10px, 1vw, 14px);
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 1px 3px #38271c;
+    transition: transform 180ms ease;
+}
+
+.dish:hover,
+.dish:focus-visible {
+    transform: translateY(-5px);
+}
+
+.dish img {
+    display: block;
+    width: 100%;
+    height: clamp(90px, 20vh, 150px);
+    object-fit: contain;
+}
+
+.dish span {
+    margin-top: 2px;
+    text-align: center;
+}
+
+.gyozas {
+    left: 38%;
+}
+
+.pollo {
+    left: 47%;
+}
+
+.galletas {
+    left: 57%;
+}
+
+@media (max-width: 600px) {
+    .title {
+        top: 18%;
+        left: 50%;
+    }
+
+    .blanket {
+        bottom: 3%;
+        width: 100%;
+    }
+
+    .dish {
+        bottom: 9%;
+        width: 25%;
+        font-size: clamp(9px, 2.5vw, 12px);
+    }
+
+    .dish img {
+        height: clamp(75px, 15vh, 120px);
+    }
+
+    .gyozas {
+        left: 12%;
+    }
+
+    .pollo {
+        left: 37.5%;
+    }
+
+    .galletas {
+        left: 63%;
+    }
+}

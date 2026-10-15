@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: #17100d;
+    color: #fff6e5;
+    font-family: "Courier New", monospace;
+}
+
+.scene {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px 20px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.scene::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.18);
+}
+
+.contenido-postre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(100%, 620px);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.contraseña {
+    margin: 0 0 30px;
+    font-size: clamp(24px, 4vw, 38px);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+}
+
+.formulario-contraseña {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+}
+
+.formulario-contraseña label {
+    font-size: clamp(14px, 2vw, 17px);
+    line-height: 1.6;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+.formulario-contraseña input {
+    width: min(100%, 380px);
+    min-height: 48px;
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 246, 229, 0.8);
+    background: rgba(20, 12, 8, 0.35);
+    color: #fff6e5;
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    text-align: center;
+}
+
+.formulario-contraseña input::placeholder {
+    color: rgba(255, 246, 229, 0.75);
+}
+
+.formulario-contraseña button,
+#boton-final {
+    padding: 12px 24px;
+    border: 1px solid rgba(255, 246, 229, 0.8);
+    background: rgba(20, 12, 8, 0.6);
+    color: #fff6e5;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+}
+
+.formulario-contraseña button:hover,
+#boton-final:hover {
+    background: #fff6e5;
+    color: #17100d;
+}
+
+#error {
+    font-size: 14px;
+}
+
+.postre {
+    margin: 28px 0 0;
+    font-size: clamp(14px, 2.5vw, 19px);
+    font-weight: 400;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
+}
+
+.carta {
+    display: block;
+    width: 90%;
+    max-width: 800px;
+    max-height: 75vh;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.pantalla-final {
+    max-width: 620px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.pantalla-final h1 {
+    font-size: clamp(28px, 6vw, 48px);
+    font-weight: 400;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.pantalla-final p {
+    font-size: clamp(14px, 3vw, 19px);
+    line-height: 1.6;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    .contenido-postre {
+        padding: 20px 10px;
+    }
+
+    .contraseña {
+        margin-bottom: 24px;
+    }
+
+    .formulario-contraseña {
+        gap: 15px;
+    }
+
+    .carta {
+        width: 100%;
+        max-height: 70vh;
+    }
+}

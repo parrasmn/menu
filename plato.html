@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plato fuerte</title>
+    <link rel="stylesheet" href="appearenceF.css">
+</head>
+<body>
+    <main class="pantalla" id="pantallaRegalos">
+        <h1>Por ahora te he dado...</h1>
+        <p class="texto">Uno por cada mes que pasamos juntos.</p>
+        <img class="collage" src="collage.png" alt="Collage de nuestros regalos">
+        <button type="button" onclick="mostrarAdivinanza()">NEXT </button>
+    </main>
+
+    <main class="pantalla" id="pantallaAdivinanza" hidden>
+        <h1>Pero todavía faltan algunos...</h1>
+        <div class="adivinanza">
+            <p id="pista">Pista 1: Es una decoración para tu cuarto.</p>
+            <label for="respuesta">¿Qué crees que es?</label>
+            <input type="text" id="respuesta" placeholder="Escribe tu respuesta..." autocomplete="off">
+            <p id="mensaje" aria-live="polite"></p>
+            <button type="button" onclick="comprobarRespuesta()">RESPONDER</button>
+            <button type="button" class="secundario" onclick="otraPista()">NECESITO OTRA PISTA</button>
+        </div>
+    </main>
+
+    <main class="pantalla" id="pantallaSorpresa" hidden>
+        <h1>Bueno… ahora mira detrás de ti. </h1>
+        <p class="texto">Hay algo esperándote.</p>
+        <button type="button" onclick="mostrarLego()">NEXT </button>
+    </main>
+
+    <main class="pantalla" id="pantallaLego" hidden>
+        <h1>Tu onceavo regalo </h1>
+        <img class="lego" src="lego.png" alt="El regalo LEGO">
+        <button type="button" class="secundario" onclick="volverMenu()">BACK AL MENÚ</button>
+    </main>
+
+    <script src="scriptF.js"></script>
+</body>
+</html>

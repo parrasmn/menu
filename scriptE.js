@@ -37,7 +37,3 @@ quiz.addEventListener("submit", function(event) {
 
     resultado.scrollIntoView({ behavior: "smooth" });
 });
-
-function volverMenu() {
-    window.location.href = "index.html";
-}
